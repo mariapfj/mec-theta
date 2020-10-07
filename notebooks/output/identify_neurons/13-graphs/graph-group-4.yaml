@@ -1,0 +1,28 @@
+!!python/object:networkx.classes.graph.Graph
+_adj:
+  MBR-0013-270820-1_133:
+    MBR-0013-280820-1_262: &id001
+      depth_delta: 0.0
+      weight: 0.05863249598149593
+  MBR-0013-280820-1_262:
+    MBR-0013-270820-1_133: *id001
+  MBR-0013-280820-1_263: {}
+_node: &id003
+  MBR-0013-270820-1_133:
+    action_id: MBR-0013-270820-1
+    unit_id: '133'
+  MBR-0013-280820-1_262:
+    action_id: MBR-0013-280820-1
+    unit_id: '262'
+  MBR-0013-280820-1_263:
+    action_id: MBR-0013-280820-1
+    unit_id: '263'
+adjlist_inner_dict_factory: &id002 !!python/name:builtins.dict ''
+adjlist_outer_dict_factory: *id002
+edge_attr_dict_factory: *id002
+graph: {}
+graph_attr_dict_factory: *id002
+node_attr_dict_factory: *id002
+node_dict_factory: *id002
+nodes: !!python/object:networkx.classes.reportviews.NodeView
+  _nodes: *id003

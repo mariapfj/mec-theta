@@ -14,9 +14,9 @@ import warnings
 
 
 def project_path():
-    path = os.environ.get("SEPTUM_MEC_DATA")
+    path = os.environ.get("MEC_THETA_PATH")
     if path is None:
-        raise Exception("Need to set `SEPTUM_MEC_DATA` as environment variable first.")
+        raise Exception("Need to set `MEC_THETA_PATH` as environment variable first.")
     else:
         path = pathlib.Path(path)
     return path
@@ -274,13 +274,14 @@ def load_tracking(data_path, sampling_rate, low_pass_frequency, box_size, veloci
 
 
 def get_data_path(action):
-    # action_path = action._backend.path
-    # project_path = action_path.parent.parent
+    action_path = action._backend.path
+    project_path = action_path.parent.parent
     #data_path = action.data['main']
-    data_path = str(action.data_path('main'))
+    data_path = str(pathlib.Path(pathlib.PureWindowsPath(action.data['main'])))
 
     # print("Project path: {}\nData path: {}".format(project_path, data_path))
-    return data_path
+    return project_path / data_path
+
 
 
 def get_sample_rate(data_path, default_sample_rate=30000*pq.Hz):
@@ -438,7 +439,7 @@ def load_unit_annotations(data_path, channel_group):
     '''
     sample_rate = get_sample_rate(data_path)
     sorting = se.ExdirSortingExtractor(
-        data_path, sample_rate=sample_rate,
+        data_path, sampling_frequency=sample_rate,
         channel_group=channel_group, load_waveforms=False)
     units = []
     for u in sorting.get_unit_ids():

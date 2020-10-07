@@ -1,8 +1,8 @@
 import numpy as np
 import networkx as nx
-from .trackunitcomparison import TrackingSession
-from .data_processing import get_data_path, get_channel_groups, load_spiketrains
-from .track_units_tools import (
+from trackunitcomparison import TrackingSession
+from data_processing import get_data_path, get_channel_groups, load_spiketrains
+from track_units_tools import (
     get_unit_id, compute_templates, plot_waveform,
     plot_template, compute_template)
 import matplotlib.pylab as plt
@@ -75,7 +75,7 @@ class TrackMultipleSessions:
                         node_name = action_id + '_' + str(u)
                         self.graphs[ch].add_node(
                             node_name, action_id=action_id,
-                            unit_id=u)
+                            unit_id=str(u))
 
             # edges
             for comp in self.comparisons:
@@ -88,7 +88,7 @@ class TrackMultipleSessions:
                         node1_name = comp.action_id_0 + '_' + str(u1)
                         node2_name = comp.action_id_1 + '_' + str(u2)
                         self.graphs[ch].add_edge(
-                            node1_name, node2_name, weight=score)
+                            node1_name, node2_name, weight=float(score))
 
             # the graph is symmetrical
             self.graphs[ch] = self.graphs[ch].to_undirected()

@@ -1,6 +1,6 @@
-from .track_units_tools import make_dissimilary_matrix, compute_templates, make_possible_match, make_best_match, \
+from track_units_tools import make_dissimilary_matrix, compute_templates, make_possible_match, make_best_match, \
     make_hungarian_match, get_unit_id, dissimilarity
-from .data_processing import get_data_path, load_spiketrains, get_channel_groups, load_unit_annotations
+from data_processing import get_data_path, load_spiketrains, get_channel_groups, load_unit_annotations
 import matplotlib.pylab as plt
 import numpy as np
 from pathlib import Path

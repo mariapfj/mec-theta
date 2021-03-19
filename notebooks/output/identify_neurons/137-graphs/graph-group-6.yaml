@@ -1,0 +1,24 @@
+!!python/object:networkx.classes.graph.Graph
+_adj:
+  137-190121-2_127:
+    137-310121-8_83: &id001
+      depth_delta: 0.0
+      weight: 0.18731281545297995
+  137-310121-8_83:
+    137-190121-2_127: *id001
+_node: &id003
+  137-190121-2_127:
+    action_id: 137-190121-2
+    unit_id: '127'
+  137-310121-8_83:
+    action_id: 137-310121-8
+    unit_id: '83'
+adjlist_inner_dict_factory: &id002 !!python/name:builtins.dict ''
+adjlist_outer_dict_factory: *id002
+edge_attr_dict_factory: *id002
+graph: {}
+graph_attr_dict_factory: *id002
+node_attr_dict_factory: *id002
+node_dict_factory: *id002
+nodes: !!python/object:networkx.classes.reportviews.NodeView
+  _nodes: *id003

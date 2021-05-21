@@ -663,7 +663,7 @@ class Data:
                 get_unit_id(st): Template(st)
                 for st in load_spiketrains(
                     self.data_path(action_id), channel_group,
-                    load_waveforms=True,
+                    load_waveforms=False,
                     lim=lim)
             }
         return self._templates[action_id][channel_group][unit_id]
